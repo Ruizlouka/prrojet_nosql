@@ -1,0 +1,48 @@
+# index
+db.mission.createIndex(
+    {
+        "name":1
+    }
+)
+
+# search
+db.mission.aggregate([{
+    $search: {
+        text: {
+            query: 'crème',
+            path: 'name'
+        }
+    }
+}])
+
+db.mision.aggregate([{ 
+    $search:{
+        wildcard: {
+            query:'crème*',
+            path: 'name',
+            allowAnalyzedField: true
+        }
+    }
+}
+}])
+
+distinc
+db.mission.aggregate([{
+    $unwind: {
+        path: "$is_active:",
+    }
+}, {
+    $group: {
+        _id: "$is_active:",
+        nbProjets: {
+            $sum: 1
+        }
+    }
+}])
+
+# Pour les mision les plus récents
+db.mision.find().sort("date_de_debut":-1).limit(4)
+
+creer une mision
+
+POST localhost:5000/mision/new {"name":"job d'été","localisation":"Paris","duree":"3 jours","date_de_debut":"2017-08-09T22:00:00Z","date_de_fin":"","is_remote":true,"is_active":true,"id_utilisateur":{"$oid":"7025642e811bc817af697fb1"},"tecnos":[{"$oid":"6025642e811bc817af697fb1"},{"$oid":"6025642e811bc817af697fb3"}]}}

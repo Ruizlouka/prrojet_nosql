@@ -1,0 +1,25 @@
+{
+  "name": "projet-nosql",
+  "version": "1.0.0",
+  "description": "projet_nosql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RuizLouka/projet-nosql.git"
+  },
+  "author": "Ruiz-Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RuizLouka/projet-nosql/issues"
+  },
+  "homepage": "https://github.com/RuizLouka/projet-nosql#readme",
+  "dependencies": {
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3"
+  }
+}
